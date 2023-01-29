@@ -1,0 +1,43 @@
+/* 
+    flex.scss
+*/ 
+
+.flex {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &--secondary {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    &__box {
+        width: 135px;
+        text-align: center;
+        border-radius: 5px;
+        margin: 2vh 3vw;
+        &--secondary {
+            width: 350px;
+            margin: 3vh 4vw;
+        }
+    &__button {
+        width: 100%;
+        background-color: black;
+        border: black;
+        padding: 5px 0px;
+        color: white;
+        font-weight: bold;
+        &:hover {
+            transition: 0.3s;
+            background-color: rgb(66, 66, 66);
+            cursor: pointer;
+            border: rgb(66, 66, 66);
+        }
+    }
+    
+
+    }
+    
+}
+

@@ -1,0 +1,14 @@
+/* 
+    layout.scss
+*/ 
+
+.layout {
+    margin-top: 20px;
+    &--secondary {
+        padding-top: 0px;
+        margin-top: 0px;
+        height: 100vh;
+        background-image: url("../../images/background.jpg");
+        background-size: cover;
+    }
+}
