@@ -16,19 +16,18 @@ function App() {
         <nav className="navigation" >
           <ul className="navigation__list">
           <Link className="navigation__list__item" to="/">HOME</Link>
-            <Link className="navigation__list__item" to="/makes">VEHICLE MAKES</Link>
-            <Link className="navigation__list__item" to="/models">VEHICLE MODELS</Link>
+            <Link className="navigation__list__item" to="/vehicles/makes">VEHICLE MAKES</Link>
           </ul>
         </nav>
       <Switch>
 
       
 
-        <Route path="/makes">
+        <Route path="/vehicles/makes">
           <Makes />
         </Route>
 
-        <Route path="/models">
+        <Route path="/vehicles/models">
           <Models />
         </Route>
 

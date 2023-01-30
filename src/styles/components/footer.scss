@@ -1,0 +1,16 @@
+/*
+    footer.scss
+*/ 
+
+.footer {
+    position:fixed;
+    left:0;
+    bottom:0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    &__text {
+        padding: 15px;
+        font-family: Cambria;
+    }
+}

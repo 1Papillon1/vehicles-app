@@ -3,18 +3,18 @@
 */
 
 .button {
-    width: 250px;
-    background-color: white;
+    width: 100%;
+    background-color: black;
+    color: white;
     border: 0;
     font-family: "Cambria";
     font-weight: bold;
     font-size: 16px;
     padding: 10px;
-    border-radius: 15px;
     font-size: 20px;
     &:hover {
         transition: 0.3s;
         cursor: pointer;
-        background-color: rgb(245, 245, 245);
+        background-color: rgb(149, 149, 149);
     }
 }
