@@ -1,0 +1,233 @@
+{
+    "vehicles": {
+      "makes": [
+        {
+          "id": 1,
+          "make": "Audi",
+          "abbreviation": "AUDI"
+        },
+        {
+          "id": 2,
+          "make": "Alfa Romeo",
+          "abbreviation": "ALFA"
+        },
+        {
+          "id": 4,
+          "make": "BMW",
+          "abbreviation": "BMW"
+        },
+        {
+          "id": 5,
+          "make": "Cadillac",
+          "abbreviation": "CADI"
+        },
+        {
+          "id": 6,
+          "make": "Bentley",
+          "abbreviation": "BENT"
+        },
+        {
+          "id": 7,
+          "make": "Ford",
+          "abbreviation": "FORD"
+        },
+        {
+          "id": 8,
+          "make": "Citroen",
+          "abbreviation": "CITR"
+        },
+        {
+          "id": 9,
+          "make": "Cooper",
+          "abbreviation": "COOP"
+        },
+        {
+          "id": 10,
+          "make": "Fiat",
+          "abbreviation": "FIAT"
+        },
+        {
+          "id": 11,
+          "make": "Jaguar",
+          "abbreviation": "JAGU"
+        }
+      ],
+      "models": [
+        {
+          "id": 1,
+          "model": "Audi Q3",
+          "makeId": 1
+        },
+        {
+          "id": 2,
+          "model": "Audi Q5",
+          "makeId": 1
+        },
+        {
+          "id": 3,
+          "model": "Escalade",
+          "makeId": 5
+        },
+        {
+          "id": 4,
+          "model": "XT6",
+          "makeId": 5
+        },
+        {
+          "id": 5,
+          "model": "C3",
+          "makeId": 8
+        },
+        {
+          "id": 6,
+          "model": "C5 Aircross",
+          "makeId": 8
+        },
+        {
+          "id": 7,
+          "model": "Bentley Flying Spur",
+          "makeId": 6
+        },
+        {
+          "id": 8,
+          "model": "Ford 427",
+          "makeId": 7
+        },
+        {
+          "id": 9,
+          "model": "Electric Hardtop",
+          "makeId": 9
+        },
+        {
+          "id": 10,
+          "model": "Clubman",
+          "makeId": 9
+        },
+        {
+          "id": 11,
+          "model": "Fiat 500X",
+          "makeId": 10
+        },
+        {
+          "id": 12,
+          "model": "Fiat 124",
+          "makeId": 10
+        },
+        {
+          "id": 13,
+          "model": "Fiat Tipo",
+          "makeId": 10
+        },
+        {
+          "id": 14,
+          "model": "Jaguar F-pace",
+          "makeId": 11
+        },
+        {
+          "id": 15,
+          "model": "Audi Q7",
+          "makeId": 1
+        },
+        {
+          "id": 16,
+          "model": "Audi Q8",
+          "makeId": 1
+        },
+        {
+          "id": 17,
+          "model": "Audi A6",
+          "makeId": 1
+        },
+        {
+          "id": 18,
+          "model": "Stelvio",
+          "makeId": 2
+        },
+        {
+          "id": 19,
+          "model": "Stelvio Quadrifolgio",
+          "makeId": 2
+        },
+        {
+          "id": 20,
+          "model": "Giulia",
+          "makeId": 2
+        },
+        {
+          "id": 21,
+          "model": "BMW iX",
+          "makeId": 4
+        },
+        {
+          "id": 22,
+          "model": "BMW iX M60",
+          "makeId": 4
+        },
+        {
+          "id": 23,
+          "model": "BMW i7",
+          "makeId": 4
+        },
+        {
+          "id": 24,
+          "model": "BMW i4",
+          "makeId": 4
+        },
+        {
+          "id": 25,
+          "model": "Cadillac XT4",
+          "makeId": 5
+        },
+        {
+          "id": 26,
+          "model": "Cadillac XT5",
+          "makeId": 5
+        },
+        {
+          "id": 27,
+          "model": "Bentaya EWB",
+          "makeId": 6
+        },
+        {
+          "id": 28,
+          "model": "Bentaya EWB Azure",
+          "makeId": 6
+        },
+        {
+          "id": 29,
+          "model": "2022 Ecosport",
+          "makeId": 7
+        },
+        {
+          "id": 30,
+          "model": "2023 Bronco",
+          "makeId": 7
+        },
+        {
+          "id": 31,
+          "model": "2023 Super",
+          "makeId": 7
+        },
+        {
+          "id": 32,
+          "model": "C3 Aircross",
+          "makeId": 8
+        },
+        {
+          "id": 33,
+          "model": "C3",
+          "makeId": 8
+        },
+        {
+          "id": 34,
+          "model": "C4",
+          "makeId": 8
+        },
+        {
+          "id": 35,
+          "model": "C5 Hybrid",
+          "makeId": 8
+        }
+      ]
+    }
+  }

@@ -1,3 +1,5 @@
+import { QuerySnapshot } from "@firebase/firestore";
+import { get } from "mobx";
 import React, { useState, useEffect } from "react";
 import {
     BrowserRouter as Router,
@@ -6,25 +8,41 @@ import {
   } from "react-router-dom";
 import audi from "../images/audi.png";
 import { useFetchMakes } from "../networking/useFetchMakes";
+import firebase from "../services/firebase";
+import Store from "../Stores/Store";
+import { toJS } from "mobx";
+import nextId from "react-id-generator";
 
-function VehicleMake() {
+
+
+
+
+
+
+function VehicleMake({ store }) {
+    
+    const [loading, setLoading] = useState(false);
+
     
 
-  const {data, loading} = useFetchMakes("https://jsonblob.com/api/1067952306045337600");
-  
-  
+    const newVehicleMakes = toJS(store.vehicleMakes);
     
+    
+    
+    let randomId = nextId();
+
+    
+
+    
+      
+    
+
 
     return(
         <div className="layout">
-            {loading && 
-            <div className="flex">
-                <h3 className="title">Loading...</h3>
-                
-            </div>}
-			{data.length > 0 && (
+            {newVehicleMakes.length > 0 && (
                 <div className="flex">
-                    {data.map(vehicle => (
+                    {newVehicleMakes.map(vehicle => (
                         <div className="flex__box">
                             <img src={audi} className="image"/>
                             <h3 className="title">{vehicle.make}</h3>
@@ -39,9 +57,11 @@ function VehicleMake() {
                 </div>
             )}
 			
+			
         </div>
     )
 }
 
 export default VehicleMake;
+
 

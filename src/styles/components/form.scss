@@ -1,0 +1,19 @@
+/*
+    form.scss
+*/ 
+
+.form {
+    margin-top: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    &__label {
+        font-family: Cambria;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    &__input {
+        display: block;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
