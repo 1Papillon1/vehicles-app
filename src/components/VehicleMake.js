@@ -7,7 +7,6 @@ import {
     useParams
   } from "react-router-dom";
 import audi from "../images/audi.png";
-import { useFetchMakes } from "../networking/useFetchMakes";
 import firebase from "../services/firebase";
 import Store from "../Stores/Store";
 import { toJS } from "mobx";

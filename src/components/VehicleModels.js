@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import escalade from "../images/escalade.jpg";
 import { useLocation, useHistory } from "react-router-dom";
-import { useFetchModels } from "../networking/useFetchModels";
+
 
 function VehicleModels() {
+
+    /*
     let history = useHistory();
     function handleClick() {
         history.push("/vehicles/makes");
@@ -14,7 +16,7 @@ function VehicleModels() {
     console.log(vehicleMake);
 
     const {data, loading} = useFetchModels("https://jsonblob.com/api/1067952306045337600");
-
+*/
     
     
 
@@ -22,7 +24,16 @@ function VehicleModels() {
 
     return(
         <div className="layout">
-            <button className="button" type="button" onClick={handleClick}>
+            
+			
+        </div>
+    )
+}
+
+export default VehicleModels;
+
+/*
+<button className="button" type="button" onClick={handleClick}>
                 Go back!
             </button>
             {loading && 
@@ -46,10 +57,5 @@ function VehicleModels() {
 
                 </div>
             )}
-			
-        </div>
-    )
-}
 
-export default VehicleModels;
-
+*/
