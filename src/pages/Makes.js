@@ -51,6 +51,7 @@ function Makes({ store }) {
         <div className={`sidebar ${isSidebarOpen == true ? 'active' : ''}`}>
         <div onClick={ToggleSidebar}><i className="icon fa fa-times"></i></div>
             <div className="form">
+                <h2 className="form__title">Vehicle Makes</h2>
                 <label className="form__label" htmlFor="make">Vehicle make:</label>
                 <input className="form__input"
                     type="text"
@@ -72,6 +73,7 @@ function Makes({ store }) {
             </div>
 
                 <div className="form">
+                    <h2 className="form__title">Vehicle Model</h2>
                     <label className="form__label" htmlFor="model">Vehicle Model:</label>
                     <input className="form__input"
                     type="text"

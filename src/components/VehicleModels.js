@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import escalade from "../images/escalade.jpg";
 import { useLocation, useHistory } from "react-router-dom";
+import { toJS } from "mobx";
 
 
-function VehicleModels() {
+function VehicleModels({ store }) {
 
+    const newVehicleModels = toJS(store.vehicleModels);
     /*
     let history = useHistory();
     function handleClick() {
