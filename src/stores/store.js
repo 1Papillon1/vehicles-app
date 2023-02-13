@@ -32,17 +32,18 @@ class Store {
             createVehicleModel: action,
             createVehicleMake: action,
             assignMakeToModel: action,
-            getMakesData: action,
-            getModelsData: action
+            getModelsData: action,
+            getMakesData: action
         });
-        
-        autorun(() => {
-            this.getMakesData();
-        })
         
         autorun (() => {
             this.getModelsData();
         })
+
+        autorun(() => {
+            this.getMakesData();
+        })
+        
 
         autorun(() => {
             if (this.totalVehicleMakes < 1 && this.totalVehicleModels < 1) {

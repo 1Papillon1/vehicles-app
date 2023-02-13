@@ -34,7 +34,7 @@ function App() {
         </Route>
 
         <Route path="/vehicles/models">
-          <Models />
+          <Models store={vehiclesStore}/>
         </Route>
 
         <Route path="/">

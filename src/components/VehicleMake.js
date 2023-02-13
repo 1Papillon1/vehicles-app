@@ -7,8 +7,6 @@ import {
     useParams
   } from "react-router-dom";
 import audi from "../images/audi.png";
-import firebase from "../services/firebase";
-import Store from "../Stores/Store";
 import { toJS } from "mobx";
 import nextId from "react-id-generator";
 
@@ -25,12 +23,12 @@ function VehicleMake({ store }) {
     
 
     const newVehicleMakes = toJS(store.vehicleMakes);
-    
-    
-    
-    let randomId = nextId();
 
     
+    
+//  let randomId = nextId();
+
+
 
     
       
@@ -46,7 +44,7 @@ function VehicleMake({ store }) {
                             <img src={audi} className="image"/>
                             <h3 className="title">{vehicle.make}</h3>
                             <h3 className="title">{vehicle.abbreviation}</h3>
-                            <Link className="flex__box__button" to={{pathname: "/vehicles/models", state:{vehicleMake:vehicle.id}}}>
+                            <Link className="flex__box__button" to={{pathname: "/vehicles/models", state:{vehicleMakeId:vehicle.id}}}>
                                 <button className="flex__box__button" onClick={() => console.log(vehicle.id)}>
                                     See models
                                 </button>
