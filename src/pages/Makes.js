@@ -8,6 +8,9 @@ import 'font-awesome/css/font-awesome.min.css';
 
 function Makes({ store }) {
     
+    let randomId = nextId();
+
+// states
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const ToggleSidebar = () => {
         isSidebarOpen === true ? setSidebarOpen(false) :
@@ -17,18 +20,13 @@ function Makes({ store }) {
     const [make, setMake] = useState("");
     const [abbreviation, setAbbreviation] = useState("");
 
-    const [model, setModel] = useState("");
-    const [makeId, setMakeId] = useState(null);
 
+// changes
     const onMakeChanged = e => setMake(e.target.value);
     const onAbbreviationChanged = e => setAbbreviation(e.target.value);
 
-    const onModelChanged = e => setModel(e.target.value);
-    const onMakeIdChanged = e => setMakeId(e.target.value);
     
-
-    let randomId = nextId();
-
+// functions
     const saveMake = () => {
         if (make && abbreviation) {
           const vehicleMake = store.createVehicleMake({id: randomId, make, abbreviation});
@@ -42,12 +40,12 @@ function Makes({ store }) {
 
     return(
         <div>
-            <button className="button button--secondary" onClick={ToggleSidebar}>Add vehicles</button>
+            <button className="button button--secondary" onClick={ToggleSidebar}>Add Makes</button>
 
             <VehicleMake store={store} />
             
 
-            {store.showStoreDetails()}
+            
         <div className={`sidebar ${isSidebarOpen == true ? 'active' : ''}`}>
         <div onClick={ToggleSidebar}><i className="icon fa fa-times"></i></div>
             <div className="form">
@@ -72,17 +70,7 @@ function Makes({ store }) {
                 <button onClick={saveMake} >Add make</button>
             </div>
 
-                <div className="form">
-                    <h2 className="form__title">Vehicle Model</h2>
-                    <label className="form__label" htmlFor="model">Vehicle Model:</label>
-                    <input className="form__input"
-                    type="text"
-                    id="model"
-                    name="model"
-                    value={model}
-                    onChange={onModelChanged}
-                    />
-                </div>
+                
             </div>
             <Footer />
         </div>
