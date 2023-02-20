@@ -1,11 +1,16 @@
 import React from "react";
 import { action, autorun, computed, makeObservable, observable, runInAction } from "mobx";
 import firebase from "../services/firebase";
+import { addDoc, QuerySnapshot, getDocs } from "firebase/firestore";
+import { toJS } from "mobx";
+import { collection } from "firebase/firestore";
+import { db } from "../services/firebase";
+
+export const refMakes = firebase.firestore().collection("makes");
+export const refModels = firebase.firestore().collection("models");
 
 
 
-const refMakes = firebase.firestore().collection("makes");
-const refModels = firebase.firestore().collection("models");
 
 class Store {
 
@@ -31,20 +36,20 @@ class Store {
             storeDetails: computed,
             createVehicleModel: action,
             createVehicleMake: action,
+            updateMake: action,
+            updateModel: action,
             assignMakeToModel: action,
             getModelsData: action,
             getMakesData: action
         });
+      
         
-        autorun (() => {
-            this.getModelsData();
-        })
-
+        
         autorun(() => {
             this.getMakesData();
         })
         
-
+       
         autorun(() => {
             if (this.totalVehicleMakes < 1 && this.totalVehicleModels < 1) {
                 console.log("There are no makes or models in the store!");
@@ -52,9 +57,20 @@ class Store {
         })
     }
 
+   
+
     createVehicleMake(vehicleMake = {id: 0, make: "", abbreviation: ""}) {
-        this.vehicleMakes.push(vehicleMake);
+        // this.vehicleMakes.push(vehicleMake);
+        
+
+        const docRef = addDoc((collection(db, "makes")), {
+            id: vehicleMake.id,
+            make: vehicleMake.make,
+            abbreviation: vehicleMake.abbreviation
+        });
+        
     }
+
 
     
 
@@ -74,6 +90,13 @@ class Store {
         const makeIndexAtId = this.vehicleMakes.findIndex((vehicleMake) => vehicleMake.id === makeId);
         if (makeIndexAtId > -1 && update) {
             this.vehicleMakes[makeIndexAtId] = update;
+        }
+    }
+
+    updateModel(modelId, update) {
+        const makeIndexAtId = this.vehicleModels.findIndex((vehicleModel) => vehicleModel.id === modelId);
+        if (makeIndexAtId > -1 && update) {
+            this.vehicleModels[makeIndexAtId] = update;
         }
     }
 
@@ -97,10 +120,11 @@ class Store {
     }
 
     getMakesData() {
+        
         refMakes.onSnapshot((QuerySnapshot) => {
             QuerySnapshot.forEach((doc) => {
                 this.vehicleMakes.push(doc.data());
-                //this.createVehicleMake({doc.id,doc.make,doc.abbreviation});
+                
             });
             
         })
@@ -119,6 +143,7 @@ class Store {
     }
 
     
+
 
     
 

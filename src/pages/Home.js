@@ -3,7 +3,7 @@ import {
     Link
   } from "react-router-dom";
 
-function Home() {
+function Home({ store }) {
     useEffect(() => {
         document.title="HOME | VEHICLES"
     }, [])

@@ -38,7 +38,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Home />
+          <Home store={vehiclesStore}/>
         </Route>
 
       </Switch>

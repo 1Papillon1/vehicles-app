@@ -19,27 +19,34 @@ import nextId from "react-id-generator";
 function VehicleMake({ store }) {
     
     const [loading, setLoading] = useState(false);
+    const [data, setData] = useState([]);
 
+    const { vehicleMakes } = store;
     
 
-    const newVehicleMakes = toJS(store.vehicleMakes);
+   useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+        setLoading(false);
+        setData(toJS(vehicleMakes));
+        
+    }, 1000)
+    
+   }, [])
 
     
-    
-//  let randomId = nextId();
-
-
-
-    
-      
-    
-
 
     return(
         <div className="layout">
-            {newVehicleMakes.length > 0 && (
+            {store.showStoreDetails()}
+            {loading && (
                 <div className="flex">
-                    {newVehicleMakes.map(vehicle => (
+                    <h2 className="flex__box">Loading...</h2>
+                    </div>
+            )}
+            {data.length > 0 && (
+                <div className="flex">
+                    {data.map(vehicle => (
                         <div className="flex__box">
                             <img src={audi} className="image"/>
                             <h3 className="title">{vehicle.make}</h3>
