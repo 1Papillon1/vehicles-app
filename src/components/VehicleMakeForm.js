@@ -2,14 +2,16 @@ import React, {useState, useEffect} from "react";
 import nextId from "react-id-generator";
 import { db } from "../services/firebase";
 import { addDoc, collection } from "firebase/firestore";
+import { toJS } from "mobx";
 
 
 function VehicleMakeForm({ store }) {
 
-    let randomId = nextId();
     
+
     
 // states
+const { vehicleMakes } = store;
 const [isSidebarOpen, setSidebarOpen] = useState(false);
 const ToggleSidebar = () => {
     isSidebarOpen === true ? setSidebarOpen(false) :
@@ -25,32 +27,19 @@ const onMakeChanged = e => setMake(e.target.value);
 const onAbbreviationChanged = e => setAbbreviation(e.target.value);
 
 // functions
-/*
-const saveMake = async (e) => {
-    if (make && abbreviation) {
-        //store.createVehicleMake({id: randomId, make, abbreviation});
-        e.preventDefault();
-      try {
-        const docRef = await addDoc((collection(db, "makes")), {
-            id: randomId,
-            make: make,
-            abbreviation: abbreviation
-        });
-        console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
-        console.error("Error adding document: ", e)
-      }
-      
-      setMake('')
-      setAbbreviation('')
-    }  
-  }
-*/
 
+const data = toJS(vehicleMakes);
+let ids = data.map(el => {
+  return el.id;
+ })
+ let maxId = Math.max(...ids);
+
+ let newId = maxId + 1;
+ 
 
 const saveMake = () => {
     if (make && abbreviation) {
-        store.createVehicleMake({id: randomId, make, abbreviation});
+        store.createVehicleMake({id: newId, make, abbreviation});
         
       
       setMake('')
