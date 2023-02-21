@@ -46,7 +46,6 @@ const indexOfLastRec = currentPage*recordsPerPage;
 const indexOfFirstRec = indexOfLastRec-recordsPerPage;
 
 const nPages = Math.ceil(toJS(vehicleMakes).length / recordsPerPage);
-console.log(nPages);
 
     return(
         <div className="layout">

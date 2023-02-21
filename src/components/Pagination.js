@@ -18,9 +18,10 @@ function Pagination({ nPages, currentPage, setCurrentPage}) {
 
     return (
         <div>
+            <nav className="paginationWrapper">
             <ul className="pagination">
                 <li className="pagination__item">
-                    <a className="pagination__link"
+                    <a className="pagination__link pagination__link--first"
                     onClick={prevPage}
                     href="#">
                         Previous
@@ -29,7 +30,7 @@ function Pagination({ nPages, currentPage, setCurrentPage}) {
                 {pageNumbers.map(pageNum => (
                     <li key={pageNum} 
                     className={`pagination__item ${currentPage == pageNum ? "active" : ""}`} >
-                        <a onClick={() => setCurrentPage(pageNum)} 
+                        <a onClick={() => (setCurrentPage(pageNum))} 
                             className="pagination__link"
                             href="#">
                             {pageNum}
@@ -37,13 +38,14 @@ function Pagination({ nPages, currentPage, setCurrentPage}) {
                     </li>
                 ))}
                 <li className="pagination__item">
-                    <a className="pagination__link"
+                    <a className="pagination__link pagination__link--last"
                     onClick={nextPage}
                     href="#">
                         Next
                     </a>
                 </li>
             </ul>
+            </nav>
         </div>
     )
 }
